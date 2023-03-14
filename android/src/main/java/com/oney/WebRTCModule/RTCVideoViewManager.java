@@ -70,4 +70,17 @@ public class RTCVideoViewManager extends SimpleViewManager<WebRTCView> {
     public void setZOrder(WebRTCView view, int zOrder) {
         view.setZOrder(zOrder);
     }
+
+/**
+   * Take a snapshot of a specific {@link WebRTCView}
+   *
+   * @param view The {@code WebRTCView} on which the specified {@code option} is
+   * to be set.
+   * @param snapshotOption Represent each unique snapshot action, everytime the option changes,
+   * will triiger one snapshot.
+   */
+   @ReactProp(name = "snapshotOption")
+   public void handleTakeSnapshot(WebRTCView view, @Nullable ReadableMap snapshotOption) {
+   view.handleTakeSnapshot(snapshotOption);
+  }
 }

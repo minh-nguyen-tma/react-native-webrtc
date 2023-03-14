@@ -587,13 +587,9 @@ public class WebRTCView extends ViewGroup {
         WebRTCModule module = reactContext.getNativeModule(WebRTCModule.class);
         WritableMap params = Arguments.createMap();
         try {
-            Log.d("a","surfaceViewRendererrrrrrrr"+  surfaceViewRenderer);
-
             surfaceViewRenderer.addFrameListener(new EglRenderer.FrameListener() {
                 @Override
                 public void onFrame(Bitmap bitmap) {
-                    //runOnUiThread(() -> {
-                    Log.d("a","surfaceViewRendererrrrrrrr"+  bitmap);
                     ThreadUtils.runOnExecutor(() -> {
                         try {
                             String saveTarget = "cameraRoll";
